@@ -1,0 +1,137 @@
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Quiz</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Bootstrap JavaScript CDN -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class=".container-fluid"></div>
+    <div class="grid">
+        <div id="quiz">
+            <h1 class="display-5"></h1>The BasketBall Quiz!</h1>
+            <hr style="margin-bottom: 25px">
+
+            <p id="question"></p>
+            <!-- start of button-->
+            <div class="buttons">
+                <button id="btn0"><span id="choice0"></span></button>
+                <button id="btn1"><span id="choice1"></span></button>
+                <button id="btn2"><span id="choice2"></span></button>
+                <button id="btn3"><span id="choice3"></span></button>
+            </div>
+            
+            <!-- end of button-->
+            <hr style="margin-top: 50px">
+            <!-- start of footer-->
+            <footer>
+                <p id="progress">Question 1 of 5</p>
+            </footer>
+            <!-- start of footer-->
+        </div>
+
+
+        <!-- begaining of timer-->
+        <script>
+            // minutes 
+            var mins = 1;
+
+            //the seconds 
+            var secs = mins * 60;
+
+            //countdown function when page loaded
+            function countdown() {
+                setTimeout('Decrement()', 60);
+            }
+
+            //Decrement value. 
+            function Decrement() {
+                if (document.getElementById) {
+                    minutes = document.getElementById("minutes");
+                    seconds = document.getElementById("seconds");
+
+
+                    //Display only seconds value when less than a minute reamins. 
+                    if (seconds < 59) {
+                        seconds.value = secs;
+                    }
+
+                    //Display both minutes and seconds 
+
+                    else {
+                        minutes.value = getminutes();
+                        seconds.value = getseconds();
+                    }
+
+                    if (mins < 1) {
+                        minutes.style.color = "red";
+                        seconds.style.color = "red";
+                    }
+
+                    // page alert your time is up when timer hit 00
+                    if (mins < 0) {
+                        alert('your time is up');
+                        minutes.value = 0;
+                        seconds.value = 0;
+                    }
+                    //if seconds > 0 then seconds is decremented 
+                    else {
+                        secs--;
+                        setTimeout('Decrement()', 1000);
+                    }
+                }
+            }
+
+            function getminutes() {
+                //minutes is seconds divided by 60, rounded down 
+                mins = Math.floor(secs / 60);
+                return mins;
+            }
+
+            function getseconds() {
+                //take minutes remaining (as seconds) away  
+                //from total seconds remaining 
+                return secs - Math.round(mins * 60);
+            } 
+        </script>
+        </head>
+        <!-- Timer Starts-->
+
+
+        <body onload="countdown();">
+            <div>
+                Time
+                Remaining
+                ::
+                <input id="minutes" type="text" style="width: 20px; 
+             border: none; font-size: 14px;  
+            font-weight: bold; color: rgb(13, 52, 223);">
+                <font size="5"> :
+                </font>
+                <input id="seconds" type="text" style="width: 20px; 
+                        border: none; font-size: 15px; 
+                        font-weight: bold; color: rgb(14, 110, 201);">
+
+            </div>
+            <!-- Timer Ends-->
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+    <!-- Bootstrap JavaScript CDN -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <script src="basketballquestion.js"></script>
+
+</body>
+
+</html>

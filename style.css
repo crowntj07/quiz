@@ -1,0 +1,64 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  font-family: fantasy;
+}
+
+.selector-for-some-widget {
+    box-sizing: content-box;
+  }
+ /*-- BODY --*/
+body{
+    margin: 0;
+    padding: 0;
+    background: url(./assets/image/street-basketball-switch-hero.jpg);
+    background-size: cover;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(211, 117, 9);
+    
+}
+/*-- End BODY --*/
+
+/*-- Quiz Card --*/
+.grid {
+    width: 600px;
+    height: 500px;
+    margin: 0 auto;
+    background-color: rgb(197, 103, 14);
+    padding: 10px 50px 50px 50px;
+    border-radius: 50px;
+    border: 2px solid #dbb0b0;
+    box-shadow: 10px 15px 5px #5c1a1a;
+    
+}
+
+.grid h1{
+    font-family: fantasy;
+    background-color: rgb(13, 180, 231);
+    font-size: 60px;
+    text-align: center;
+    color: rgb(229, 243, 243);
+    padding: 2px 0px;
+    border-radius: 50px;
+}
+
+.grid #question {
+    font-family: fantasy;
+    font-size: 30px;
+    color: rgb(231, 191, 145);
+}
+/*-- End Quiz Card --*/
+.buttons {
+    margin-top: 30px;
+}
+
+
+#progress {
+    color: rgb(18, 151, 212);
+    font-size: 18px;
+}
